@@ -1,25 +1,60 @@
-import "./Form.css"
-import React from 'react'
+import "./Form.css";
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
-const Form = () => {
+function Form() {
+  const [state, handleSubmit] = useForm("mzbqeezd");
+  if (state.succeeded) {
+      return <p className="returnText">Your message has been recieved. I will contact you shortly...</p>;
+  }
   return (
-    <div className="form">
-        <form>
-            
-        <label>Your Name</label>
-            <input type="text"></input>
-            <label>Email</label>
-            <input type="email"></input>
-            <label>Subject</label>
-            <input type="text"></input>
-            <label>Message</label>
-            <textarea rows="6" placeholder="Type your message here "/>
-            <button className="btn">Submit</button>
+      <form onSubmit={handleSubmit}>
+      <label htmlFor="text">
+        Name
+      </label>
+      <input
+        id="name"
+        type="text" 
+        name="name"
+      />
+      <label htmlFor="email">
+        Email Address
+      </label>
+      <input
+        id="email"
+        type="email" 
+        name="email"
+      />
+      <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
+      <label htmlFor="text">
+        Subject
+      </label>
+      <input
+        id="Subject"
+        type="text" 
+        name="Subject"
+      />
+      <label htmlFor="Message">
+        Message
+      </label>
+      <textarea
+        id="message"
+        name="message"
+      />
+      <ValidationError 
+        prefix="Message" 
+        field="message"
+        errors={state.errors}
+      />
 
-        
-        </form>
-    </div>
-  )
+      <button type="submit" className="btn" disabled={state.submitting}>
+        Submit
+      </button>
+    </form>
+  );
 }
-
 export default Form

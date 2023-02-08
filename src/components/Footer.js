@@ -1,6 +1,7 @@
 import "./Footer.css"
 import React from 'react'
 import {FaHome,FaPhone,FaMailBulk, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"
+import { Link, NavLink } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -17,7 +18,7 @@ const Footer = () => {
             </div>
             <div className="phone">
             <h4><FaPhone  size={20} style={{color:"white",marginRight:"2rem"}}/>
-            7676801824
+            7676801823
             </h4>
             </div>
             <div className="email">
@@ -29,12 +30,18 @@ const Footer = () => {
         </div>
 
         <div className="right">
-            <h4>About me</h4>
+            <h4>My Socials</h4>
             <p> shdcvbfshjhefk rhgio uhfeion jnijnfidfjiso</p>
             <div className="social">
-            <FaGithub size={30} style={{color:"white",marginRight:"1rem"}}/>
+            <NavLink target="_blank" to="https://github.com/Bhoomika-hm">
+              <FaGithub size={30} style={{color:"white",marginRight:"1rem"}}/>
+            </NavLink>
+            <NavLink target="_blank" to="https://www.instagram.com/bhoomika.hm/">
+              <FaInstagram  size={30} style={{color:"white",marginRight:"1rem"}}/>
+            </NavLink>
+            <NavLink target="_blank" to="https://www.linkedin.com/in/bhoomika-hm/">
             <FaLinkedin size={30} style={{color:"white",marginRight:"1rem"}}/>
-            <FaInstagram  size={30} style={{color:"white",marginRight:"1rem"}}/>
+            </NavLink>
 
 
 

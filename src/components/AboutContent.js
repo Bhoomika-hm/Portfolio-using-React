@@ -13,7 +13,7 @@ const AboutContent = () => {
  Myself  a Well-Organised and a multitasking person with efficient technical skills </p>
  <div className="list">
  <h2>Technical Skills</h2>
- <ul>   
+ <ul>
   <li>HTML</li> 
   <li>CSS</li>
   <li>JavaScript</li>
